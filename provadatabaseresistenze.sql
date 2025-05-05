@@ -1,0 +1,76 @@
+-- TABELLA ARTICOLI
+CREATE TABLE Articoli (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Descrizione VARCHAR(255) NOT NULL,
+    N_pezzi_per_locazione INT NOT NULL
+);
+
+-- TABELLA LOCAZIONI
+CREATE TABLE Locazioni (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Magazzino VARCHAR(50),
+    Corridoio VARCHAR(50),
+    Scaffale VARCHAR(50),
+    Ripiano VARCHAR(50),
+    Cella VARCHAR(50)
+);
+
+-- TABELLA MOVIMENTI
+CREATE TABLE Movimenti (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Data_Ora_In DATETIME,
+    Data_Ora_Out DATETIME,
+    ID_Articolo INT,
+    Lotto VARCHAR(100),
+    ID_Locazione INT,
+    Assegnato_SiNo BOOLEAN DEFAULT FALSE,
+    In_entrata INT DEFAULT 0,
+    In_uscita INT DEFAULT 0,
+    ID_Ordine_R INT,
+    Confermato BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (ID_Articolo) REFERENCES Articoli(ID),
+    FOREIGN KEY (ID_Locazione) REFERENCES Locazioni(ID)
+);
+
+-- TABELLA ORDINI_T
+CREATE TABLE Ordini_T (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Cliente VARCHAR(255),
+    Data_OT DATE,
+    Numero VARCHAR(100)
+);
+
+-- TABELLA ORDINI_R
+CREATE TABLE Ordini_R (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Ordine_T INT,
+    ID_Articolo INT,
+    FOREIGN KEY (ID_Ordine_T) REFERENCES Ordini_T(ID),
+    FOREIGN KEY (ID_Articolo) REFERENCES Articoli(ID)
+);
+
+-- TABELLA MISSIONI_T
+CREATE TABLE Missioni_T (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Assegnatario VARCHAR(255),
+    Data_MT DATE
+);
+
+-- TABELLA MISSIONI_R
+CREATE TABLE Missioni_R (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Missione_T INT,
+    ID_Movimento INT,
+    FOREIGN KEY (ID_Missione_T) REFERENCES Missioni_T(ID),
+    FOREIGN KEY (ID_Movimento) REFERENCES Movimenti(ID)
+);
+
+-- TABELLA UTENTI
+CREATE TABLE Utenti (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Cognome VARCHAR(100),
+    Nome VARCHAR(100),
+    Username VARCHAR(100) UNIQUE,
+    Password_Utenti VARCHAR(255) NOT NULL
+);
+
