@@ -11,7 +11,7 @@ public class Connector {
           Class.forName("com.mysql.cj.jdbc.Driver");
           connection = DriverManager.getConnection(
               "jdbc:mysql://localhost:3306/MagazzinoResistenze",
-              "Magazzinouser", "Magazzinouser");
+              "root", "1234");
 
           // MagazzinoResistenze è il database
           // Magazzinouser è il nome per il database
