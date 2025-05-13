@@ -8,7 +8,9 @@ public class Connector {
       Connection connection = null;
       try {
           // linee utili per connettere
-          Class.forName("com.mysql.cj.jdbc.Driver");
+          @SuppressWarnings("unused")
+        final String CONNECTION_STRING = "jdbc:mysql://localhost:3306/MagazzinoResistenze";
+          //creo la connessione
           connection = DriverManager.getConnection(
               "jdbc:mysql://localhost:3306/MagazzinoResistenze",
               "root", "1234");

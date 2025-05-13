@@ -6,6 +6,8 @@ public class Missione {
 public static void main(String[] args) {
 	//stampo l'array prima dell'ordinamento
 	System.out.println("Array prima dell'ordinamento: ");
+	//qui impostato come null, dovrebbe prendere un array
+	//di locazioni dei lotti da stoccare
 	int[] array = null;
 	for(int i=0; i<array.length; i++) {
 		System.out.print(array[i] + " ");
