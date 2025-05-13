@@ -1,5 +1,3 @@
-package Magazzino;
-
 public class Locazione {
 public String magazzino;
 public String corridoio;

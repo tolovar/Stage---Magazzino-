@@ -14,8 +14,8 @@ public class Connector {
               "root", "1234");
 
           // MagazzinoResistenze è il database
-          // Magazzinouser è il nome per il database
-          // Magazzinouser è la password per il database
+          // root è lo username per il database
+          // 1234 è la password per il database
 
           //creo lo statement
           Statement statement;
