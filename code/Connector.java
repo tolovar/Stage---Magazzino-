@@ -31,7 +31,7 @@ public class Connector {
           ResultSet resultSet;
           // gli faccio eseguire una query che estrae tutto dal database
           resultSet = statement.executeQuery(
-              "select * from designation");
+              "select * from Articoli");
           int code;
           String title;
           while (resultSet.next()) {
