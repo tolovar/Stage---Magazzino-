@@ -5,7 +5,7 @@ import java.sql.*;
 public class Connector {
   public static void main(String arg[])
   {
-      Connection connection = null;
+      Connection connection;
       try {
           // linee utili per connettere
           Class.forName("com.mysql.cj.jdbc.Driver");
@@ -17,13 +17,15 @@ public class Connector {
           // root è lo username per il database
           // 1234 è la password per il database
 
+          System.out.println("Connessione riuscita");
+
           //creo lo statement
           Statement statement;
           statement = connection.createStatement();
           ResultSet resultSet;
           //gli faccio eseguire una query che estrae tutto dal database
           resultSet = statement.executeQuery(
-              "select * from designation");
+              "select * from Articoli");
           int code;
           String title;
           while (resultSet.next()) {
