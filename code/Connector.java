@@ -7,7 +7,12 @@ import java.util.Scanner;
 public class Connector {
   public static void main(String arg[], String lotto)
   {
-      Connection connection;
+      Connection connection = null;
+
+      // dichiaro resultSet e statement fuori dal blocco try per poterli chiudere nel finally
+      ResultSet resultSet = null; 
+      Statement statement = null;
+
       try {
 
         // carico il driver JDBC di MySQL 
@@ -26,9 +31,7 @@ public class Connector {
         System.out.println("Connessione avvenuta con successo");
 
           // creo lo statement
-          Statement statement;
           statement = connection.createStatement();
-          ResultSet resultSet;
 
           // prima query per estrarre l'id dell'articolo
           String queryArticolo = "SELECT id FROM articoli WHERE codice = ?";
@@ -105,7 +108,7 @@ public class Connector {
 
         // chiudo le risorse nel blocco finally per garantire che vengano sempre rilasciate
         try {
-            if (resultSet != null) resultSet.close();
+            if (statement != null) statement.close();
             if (statement != null) resultSet.close();
             if (connection != null) connection.close();
         } catch (SQLException e) {
