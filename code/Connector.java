@@ -4,9 +4,11 @@ import java.sql.*;
 import java.util.Scanner;
 
 @SuppressWarnings("unused")
+
 public class Connector {
-  public static void main(String arg[], String lotto)
+  public static void main(String[] args)
   {
+    String lotto;
       Connection connection = null;
 
       // dichiaro resultSet e statement fuori dal blocco try per poterli chiudere nel finally
