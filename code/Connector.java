@@ -6,7 +6,7 @@ import java.util.Scanner;
 @SuppressWarnings("unused")
 
 public class Connector {
-  public static void main(String arg[], String lotto)
+  public static void main(String arg[])
   {
       Connection connection = null;
       String lotto = null;
@@ -119,7 +119,6 @@ public class Connector {
     }
 }
 
-<<<<<<< Updated upstream
   /*
   public static void locazioneLotto(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -129,10 +128,5 @@ public class Connector {
     scanner.close();
   } 
   */
-=======
-
-
-
->>>>>>> Stashed changes
 
 }
