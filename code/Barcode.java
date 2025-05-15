@@ -58,6 +58,7 @@ public class Barcode {
             // percorso del font TrueType
             // devo avere il font "Libre Barcode 128" installato 
             // o disponibile nel percorso specificato
+            // !!! cambiare 'AlessioLongo' con il proprio nome utente !!!
             String fontPath = "C:\\Users\\AlessioLongo\\AppData\\Local\\Microsoft\\Windows\\Fonts\\LibreBarcode128-Regular.ttf"; 
             int fontSize = 48;
 
