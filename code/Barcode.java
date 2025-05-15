@@ -58,9 +58,12 @@ public class Barcode {
             // genero l'immagine con il font personalizzato sopra
             BufferedImage barcodeImage = generateBarcodeWithFont(input, fontPath, fontSize);
 
-            // salvo l'immagine su disco
-            // in formato PNG
-            File outputFile = new File("barcode.png");
+            // ottengo la directory dell'utente
+            String userHome = System.getProperty("user.home");
+            // salvo l'immagine sul desktop
+            // creo un file per l'immagine
+            // il file si chiamerà barcode.png 
+            File outputFile = new File(userHome + "\\Desktop\\barcode.png"); 
             ImageIO.write(barcodeImage, "png", outputFile);
 
             // messaggio di conferma
