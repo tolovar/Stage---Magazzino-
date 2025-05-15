@@ -34,7 +34,9 @@ public class Barcode {
 
         // disegno il testo al centro dell'immagine
         FontMetrics fontMetrics = g2d.getFontMetrics();
+        // posizione orizzontale
         int x = 0; 
+        // posizione verticale
         int y = (height - fontMetrics.getHeight()) / 2 + fontMetrics.getAscent();
         g2d.drawString(input, x, y);
 
@@ -44,14 +46,16 @@ public class Barcode {
 
     public static void main(String[] args) {
         try {
+            // codice a barre da generare
+            // stringa di esempio per il collaudo
             String input = "123456789";
             // percorso del font TrueType
             // devo avere il font "Libre Barcode 128" installato 
             // o disponibile nel percorso specificato
-            String fontPath = "C:\\Windows\\Fonts\\LibreBarcode128-Regular.ttf"; 
+            String fontPath = "C:\\Users\\AlessioLongo\\AppData\\Local\\Microsoft\\Windows\\Fonts\\LibreBarcode128-Regular.ttf"; 
             int fontSize = 48;
 
-            // genero l'immagine con il font personalizzato
+            // genero l'immagine con il font personalizzato sopra
             BufferedImage barcodeImage = generateBarcodeWithFont(input, fontPath, fontSize);
 
             // salvo l'immagine su disco
