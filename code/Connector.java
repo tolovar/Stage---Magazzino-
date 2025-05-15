@@ -9,6 +9,7 @@ public class Connector {
   public static void main(String arg[], String lotto)
   {
       Connection connection = null;
+      String lotto = null;
 
       // dichiaro resultSet e statement fuori dal blocco try per poterli chiudere nel finally
       ResultSet resultSet = null; 
@@ -118,6 +119,7 @@ public class Connector {
     }
 }
 
+<<<<<<< Updated upstream
   /*
   public static void locazioneLotto(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -127,5 +129,10 @@ public class Connector {
     scanner.close();
   } 
   */
+=======
+
+
+
+>>>>>>> Stashed changes
 
 }
