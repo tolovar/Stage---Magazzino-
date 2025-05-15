@@ -32,12 +32,18 @@ public class Barcode {
         // imposto il font
         g2d.setFont(font);
 
-        // disegno il testo al centro dell'immagine
+        // Calcolo la posizione per centrare il testo
         FontMetrics fontMetrics = g2d.getFontMetrics();
-        // posizione orizzontale
-        int x = 0; 
-        // posizione verticale
-        int y = (height - fontMetrics.getHeight()) / 2 + fontMetrics.getAscent();
+        // larghezza del testo
+        int textWidth = fontMetrics.stringWidth(input); 
+        // altezza del testo
+        int textHeight = fontMetrics.getHeight(); 
+        // posizione orizzontale centrata
+        int x = (width - textWidth) / 2; 
+        // posizione verticale centrata
+        int y = (height - textHeight) / 2 + fontMetrics.getAscent(); 
+
+        // Disegno il testo centrato
         g2d.drawString(input, x, y);
 
         g2d.dispose();
@@ -58,13 +64,19 @@ public class Barcode {
             // genero l'immagine con il font personalizzato sopra
             BufferedImage barcodeImage = generateBarcodeWithFont(input, fontPath, fontSize);
 
-            // ottengo la directory dell'utente
-            String userHome = System.getProperty("user.home");
-            // salvo l'immagine sul desktop
-            // creo un file per l'immagine
-            // il file si chiamerà barcode.png 
-            File outputFile = new File(userHome + "\\Desktop\\barcode.png"); 
+            // salvo l'immagine su disco
+            // in formato PNG
+            File outputFile = new File("barcode.png"); 
             ImageIO.write(barcodeImage, "png", outputFile);
+            // ora dovrebbe essere un file sciolto
+            // nella cartella di lavoro corrente
+            // controlla la barra explorer
+            // bordo sinistro di viasual studio
+
+            // stampo il percorso del file
+            System.out.println("Codice a barre salvato in: " + outputFile.getAbsolutePath());
+            // stampo il codice a barre
+            System.out.println("Codice a barre: " + input);
 
             // messaggio di conferma
             System.out.println("Codice a barre generato e salvato come barcode.png");
