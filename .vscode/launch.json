@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Barcode",
+            "request": "launch",
+            "mainClass": "Barcode",
+            "projectName": "Resistenza_66720552"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
