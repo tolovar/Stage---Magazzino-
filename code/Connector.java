@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.Scanner;
 
 @SuppressWarnings("unused")
+
 public class Connector {
   public static void main(String arg[], String lotto)
   {
@@ -117,20 +118,14 @@ public class Connector {
     }
 }
 
-public static void main(String[] args) {
+  /*
+  public static void locazioneLotto(String[] args) {
     Scanner scanner = new Scanner(System.in);
-
-    System.out.println("Leggi barcode");
-    String codiceArticolo = scanner.nextLine();
-
-    System.out.println("Leggi lotto");
+    System.out.print("Inserisci il lotto: ");
     String lotto = scanner.nextLine();
-
-    cercaLocazione(codiceArticolo, lotto);
-
+    locazioneLotto(args, lotto);
     scanner.close();
-}
+  } 
+  */
 
-private static void cercaLocazione(String codiceArticolo, String lotto) {
-} 
 }
